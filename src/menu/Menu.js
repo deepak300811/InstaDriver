@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react"
 import CloseIcon from "@material-ui/icons/Close"
-import Header from "../header/Header"
-function Menu({ shallOpen }) {
+function Menu({ shallOpen, closeMenu }) {
   const [status, setStatus] = useState()
   const handleClose = () => {
     setStatus(false)
-    return <Header compShallOpen={false} />
+    closeMenu()
   }
 
   useEffect(() => {

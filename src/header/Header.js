@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from "react"
 import Overlay from "../menu/Menu"
 
-function Header(props) {
+function Header() {
   // const val = props.compShallOpen
   const [isOpen, setIsOpen] = useState(false)
   const handleOpenMenu = () => {
-    setIsOpen(!isOpen)
+    setIsOpen(true)
+    console.log(isOpen)
+  }
+  const handleClose = () => {
+    setIsOpen(false)
     console.log(isOpen)
   }
 
   useEffect(() => {
-    setIsOpen(props.compShallOpen)
-  }, [props])
+    setIsOpen(false)
+  }, [])
   return (
     <>
-      <Overlay shallOpen={isOpen} />
+      <Overlay shallOpen={isOpen} closeMenu={handleClose} />
       <div id="outer-header">
         <div id="inner-header" className="container">
           <img src="https://instadriver.co/img/logo.svg" alt="logo" />
